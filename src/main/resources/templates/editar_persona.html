@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Persona</title>
+</head>
+<body>
+    <h1>Editar Persona</h1>
+    <form action="#" th:action="@{'/actualizar/' + ${persona.id}}" method="post" th:object="${persona}">
+        <p>Nombre: <input type="text" th:field="*{nombre}" /></p>
+        <p>Edad: <input type="number" th:field="*{edad}" /></p>
+        <p><button type="submit">Actualizar</button></p>
+    </form>
+    <a href="/">Volver a la lista</a>
+</body>
+</html>

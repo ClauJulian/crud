@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personas</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <main class="container">
+    <h1>Lista de Personas</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="persona : ${personas}">
+            <td th:text="${persona.id}">ID</td>
+            <td th:text="${persona.nombre}">Nombre</td>
+            <td th:text="${persona.edad}">Edad</td>
+            <td>
+                <a th:href="@{'/editar/' + ${persona.id}}">Editar</a>
+                <a th:href="@{'/eliminar/' + ${persona.id}}">Eliminar</a>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-primary"><a href="/crear">Crear Nueva Persona</a></button>
+    </main>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>
